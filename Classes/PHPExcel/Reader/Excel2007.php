@@ -848,7 +848,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
 										switch ($cellDataType) {
 											case "s":
 	//											echo 'String', PHP_EOL;
-												if ((string)$c->v != '') {
+												if ((string)$c->v != '' && isset($sharedStrings[intval($c->v)])) {
 													$value = $sharedStrings[intval($c->v)];
 
 													if ($value instanceof PHPExcel_RichText) {
